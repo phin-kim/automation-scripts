@@ -15,9 +15,9 @@ const main = async () => {
   const targetFile = process.argv[2];
   if (!targetFile) {
     console.error(
-      `USAGE: npx logout-scaffold src/backend/utils/asynchandler.ts`,
+      `USAGE: npx logout-scaffold src/backend/utils/asyncHandler.ts`,
     );
-    console.error("Generates async handler to use instead of trycatch block");
+    console.error("Generates async handler to use instead of try catch block");
     process.exit(1);
   }
   const asyncHandelerCode = `/**
@@ -113,7 +113,7 @@ C:\Users\USER\AppData\Roaming\npm\logout-scaffold.cmd
 PS C:\Users\USER\Desktop\SIDE-PROJECTS\scripts>
 ```
 
-- To acualy run the script and scaffold into your project do :
+- To actually run the script and scaffold into your project do :
 
 ```bash
 npx logger-scaffold src/utils/logger.ts

@@ -5,7 +5,12 @@ import type{Request,Response,NextFunction} from "express"
 import AppError from "./AppError.js"
 import {MongoServerError} from "mongodb"
 import type { ErrorType } from "../../backendTypes/ErrorHandler.js"
-import crypto from "node:crypto"
+import crypto from "node:crypto";
+export interface ErrorType{
+    statusCode:number
+    message:string
+    type:string
+}
 const errorHandler=(err:ErrorType,
     req:Request,
     res:Response,
@@ -20,12 +25,12 @@ const errorHandler=(err:ErrorType,
     }
     else if(err instanceof mongoose.Error.ValidationError){
         const detail = Object.values(err.errors).map((er)=>er.message).join(", ")
-        appError = AppError.validation('Validation Failed ${detail}')
+        appError = AppError.validation(\`Validation Failed \${detail}\`)
     }else if(err instanceof mongoose.Error.CastError){
-        appError=AppError.badRequest('Invalid value for ${err.path}')
+        appError=AppError.badRequest(\`Invalid value for \${err.path}\`)
     } else if(err instanceof MongoServerError && err.code ===11000){
         const field = Object.keys(err.keyValue)[0]
-        appError = AppError.conflict('${field} already exists')
+        appError = AppError.conflict(\`\${field} already exists\`)
 
     }else if(err instanceof MongoServerError){
         appError = AppError.database("Database Error")

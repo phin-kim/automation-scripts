@@ -5,9 +5,11 @@
   "bin": {
     "auth-scaffold": "auth-scaffold.js",
     "authMidd-scaffold": "authMidd-scaffold.js",
-    "asyncHandeler-scaffold": "asyncHandler-scaffold.js",
+    "asyncHandler-scaffold": "asyncHandler-scaffold.js",
     "logger-scaffold": "logger-scaffold.js",
     "logout-scaffold": "logout-scaffold.js",
+    "prettier-scaffold": "prettier-scaffold.js",
+    "prettier-ignore-scaffold": "prettier-ignore-scaffold.js",
     "errorHandler-scaffold": "errorHandler-scaffold.js",
     "git-push": "git-push.js",
     "appError-scaffold": "appError-scaffold.js"
@@ -20,6 +22,8 @@
     "logout-scaffold": "logout-scaffold",
     "errorHandler-scaffold": "errorHandler-scaffold",
     "authMidd-scaffold": "authMidd-scaffold",
+    "prettier-ignore-scaffold": "prettier-ignore-scaffold",
+    "prettier-scaffold": "prettier-scaffold",
     "asyncHandeler-scaffold": "asyncHandeler-scaffold",
     "appError-scaffold": "appError-scaffold"
   },

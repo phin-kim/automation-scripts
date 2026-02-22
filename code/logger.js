@@ -4,9 +4,9 @@ import crypto from 'node:crypto';
 type LogLevel = 'info' | 'warn' | 'error' | 'debug' | 'highlight';
 
 interface LogOptions {
-    requestId?: string; // for correlating logs
-    context?: string; // module or middleware name
-    data?: Record<string, unknown>; // any extra structured info
+    requestId?: string;
+    context?: string;
+    data?: Record<string, unknown>;
 }
 
 function createLogger(_name: string) {
@@ -18,36 +18,35 @@ function createLogger(_name: string) {
         options?: LogOptions
     ) => {
         const rid = options?.requestId ?? crypto.randomUUID().slice(0, 8);
-        const ctx = options?.context ? '[${options.context}]' : '';
+        const ctx = options?.context ? \`[\${options.context}]\` : '';
         return [
-            '[${timestamp()}]',
-            '[${rid}]',
+            \`[\${timestamp()}]\`,
+            \`[\${rid}]\`,
             ctx,
             chalk[
                 level === 'error'
                     ? 'bgRedBright'
                     : level === 'warn'
-                      ? 'yellow'
-                      : level === 'highlight'
-                        ? 'bgCyanBright'
-                        : 'gray'
+                    ? 'yellow'
+                    : level === 'highlight'
+                    ? 'bgCyanBright'
+                    : 'gray'
             ](level.toUpperCase()),
             message,
             options?.data ? JSON.stringify(options.data, null, 2) : '',
         ]
-            .filter(Boolean)
-            .join(' ');
+        .filter(Boolean)
+        .join(' ');
     };
 
+    // ... rest of your logger code stays the same
     const logger = {
         info: (message: string, options?: LogOptions) => {
             console.log(formatArgs('info', message, options));
         },
-
         warn: (message: string, options?: LogOptions) => {
             console.warn(formatArgs('warn', message, options));
         },
-
         error: (message: string | Error, options?: LogOptions) => {
             if (message instanceof Error) {
                 console.error(
@@ -60,18 +59,14 @@ function createLogger(_name: string) {
                 console.error(formatArgs('error', message, options));
             }
         },
-
         highlight: (message: string, options?: LogOptions) => {
             console.log(formatArgs('highlight', message, options));
         },
-
         debug: (message: string, options?: LogOptions) => {
             if (process.env.DEBUG === 'true') {
                 console.log(formatArgs('debug', message, options));
             }
         },
-
-        // structured log
         structured: (
             level: LogLevel,
             message: string,
@@ -90,6 +85,7 @@ function createLogger(_name: string) {
 
     return logger;
 }
+
 export default createLogger;
 `;
 export default CREATELOGGER;
