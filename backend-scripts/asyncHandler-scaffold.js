@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
-import ASYNCHANDLER from "./code/asyncHandler.js";
+import ASYNCHANDLER from "../code/backend-codes/asyncHandler.js";
 const __filename = fileURLToPath(import.meta.url);
 const main = async () => {
   const targetFile = process.argv[2];

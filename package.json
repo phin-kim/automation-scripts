@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "auth-scaffold": "auth-scaffold.js",
-    "authMidd-scaffold": "authMidd-scaffold.js",
-    "asyncHandler-scaffold": "asyncHandler-scaffold.js",
-    "logger-scaffold": "logger-scaffold.js",
-    "logout-scaffold": "logout-scaffold.js",
+    "auth-scaffold": "./backend-scripts/auth-scaffold.js",
+    "authMidd-scaffold": "./backend-scripts/authMidd-scaffold.js",
+    "asyncHandler-scaffold": "./backend-scripts/asyncHandler-scaffold.js",
+    "logger-scaffold": "./backend-scripts/logger-scaffold.js",
+    "logout-scaffold": "./backend-scripts/logout-scaffold.js",
     "prettier-scaffold": "prettier-scaffold.js",
     "prettier-ignore-scaffold": "prettier-ignore-scaffold.js",
-    "errorHandler-scaffold": "errorHandler-scaffold.js",
+    "error-store-scaffold": "./frontend-scripts/error-store-scaffold.js",
+    "errorHandler-scaffold": "./backend-scripts/errorHandler-scaffold.js",
     "git-push": "git-push.js",
-    "appError-scaffold": "appError-scaffold.js"
+    "appError-scaffold": "./backend-scripts/appError-scaffold.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,6 +25,7 @@
     "authMidd-scaffold": "authMidd-scaffold",
     "prettier-ignore-scaffold": "prettier-ignore-scaffold",
     "prettier-scaffold": "prettier-scaffold",
+    "error-store-scaffold": "error-store-scaffold",
     "asyncHandeler-scaffold": "asyncHandeler-scaffold",
     "appError-scaffold": "appError-scaffold"
   },

@@ -23,7 +23,7 @@ const main = async () => {
   try {
     console.log("Adding all the changes");
     await runCommand("git add .");
-    console.log(`Commiting with message: "${commitMessage}"`);
+    console.log(`Committing with message: "${commitMessage}"`);
     await runCommand(`git commit -m "${commitMessage}"`);
     console.log("Pushing to remote...");
     await runCommand("git push");

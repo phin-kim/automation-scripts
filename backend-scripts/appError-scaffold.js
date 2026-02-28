@@ -2,7 +2,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import APPERROR from "./code/appError.js";
+import APPERROR from "../code/backend-codes/appError.js";
 
 const __filename = fileURLToPath(import.meta.url);
 console.log(__filename);

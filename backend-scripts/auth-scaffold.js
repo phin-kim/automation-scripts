@@ -2,7 +2,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import AUTHCONTROLLER from "./code/authcontoller.js";
+import AUTHCONTROLLER from "../code/backend-codes/authcontoller.js";
 
 const __filename = fileURLToPath(import.meta.url);
 console.log(__filename);

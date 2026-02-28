@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
-import LOGOUT from "./code/logout.js";
+import LOGOUT from "../code/backend-codes/logout.js";
 const __filename = fileURLToPath(import.meta.url);
 const main = async () => {
   const targetFile = process.argv[2];
